@@ -378,12 +378,12 @@ def t_NUM(t):
     t.value = float(t.value)
     return t
 
-def t_ID(t):
-    r'\w+(\w\d)*'
+def t_STRING(t):
+    r'(("[^"]+")|(\'[^\']+\'))'
     return t
 
-def t_STRING(t):
-    r'(("[^"]")|(\'[^\']\'))'
+def t_ID(t):
+    r'\w+(\w\d)*'
     return t
 
 

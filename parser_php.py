@@ -322,6 +322,6 @@ if __name__ == '__main__':
     f = open(fin, 'r')
     data = f.read()
     print (data)
-    parser.parse(data, tracking=True)
+    #parser.parse(data, tracking=True)
     print("Amiguito, tengo el placer de informar que Tu parser reconocio correctamente todo")
     input()
