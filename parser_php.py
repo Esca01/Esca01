@@ -302,7 +302,7 @@ def p_empty(p):
 def p_error(t):
     if VERBOSE:
         if t is not None:
-            print ("ERROR SINTACTICO EN LA LINEA " + str(t.lexer.lineno) + " NO SE ESPERABA EL Token  " + str(t.value))
+            print ("ERROR SINTACTICO EN LA LINEA " + str(t.lexer.lineno) + " NO SE ESPERABA EL TOKEN  " + str(t.value))
         else:
             print ("ERROR SINTACTICO EN LA LINEA: " + str(minic_lexer.lexer.lineno))
     else:
@@ -310,8 +310,6 @@ def p_error(t):
         
 
 parser = yacc.yacc()
-
-
 if __name__ == '__main__':
 
     if (len(sys.argv) > 1):
