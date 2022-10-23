@@ -299,18 +299,18 @@ def p_empty(p):
 	'empty :'
 	pass
 
-def p_error(p):
+def p_error(t):
     if VERBOSE:
-        if p is not None:
-            print ("\t\tLine: "+str(p.lexer.lineno)+"\t=> "+str(p.value))
+        if t is not None:
+            print ("ERROR SINTACTICO EN LA LINEA " + str(t.lexer.lineno) + " NO SE ESPERABA EL Token  " + str(t.value))
         else:
-            print (chr(27)+"[1;31m"+"\t ERROR: Syntax error"+chr(27)+"[0m")
-            print ("\t\tLine:  "+str(mini_php.lexer.lineno))
-
+            print ("ERROR SINTACTICO EN LA LINEA: " + str(minic_lexer.lexer.lineno))
     else:
         raise Exception('syntax', 'error')
+        
 
 parser = yacc.yacc()
+
 
 if __name__ == '__main__':
 
@@ -322,6 +322,5 @@ if __name__ == '__main__':
     f = open(fin, 'r')
     data = f.read()
     print (data)
-    #parser.parse(data, tracking=True)
     print("Amiguito, tengo el placer de informar que Tu parser reconocio correctamente todo")
     input()
